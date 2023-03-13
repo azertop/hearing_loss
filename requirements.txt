@@ -1,5 +1,5 @@
 numpy==1.24
 matplotlib==3.4.3
 librosa==0.9.1
-soundfile
-wave
+soundfile==0.12.1
+wave==3.11
