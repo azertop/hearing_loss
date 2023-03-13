@@ -1,5 +1,5 @@
 numpy==1.24
 matplotlib==3.4.3
-librosa
+librosa==0.9.1
 soundfile
 wave
