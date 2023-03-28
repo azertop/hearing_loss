@@ -30,9 +30,11 @@ with st.sidebar :
 
 if valider:
     fft_signal = np.fft.fft(y)
+    amp = np.abs(fft_signal)
     frequencies = np.fft.fftfreq(len(y), 1/sr)
     a=np.random.choice(len(fft_signal), size=int(len(fft_signal)*p), replace=False)
     fft_signal[a]=0
+    amp2 = np.abs(fft_signal)
     y_filtered = np.fft.ifft(fft_signal).real
     plt.plot(fft_signal)
     plt.show()
@@ -47,10 +49,10 @@ if valider:
     with col1:
         st.header('Audio de base')
         fig, ax = plt.subplots()
-        ax.plot(y)
+        ax.plot(frequencies,amp)
         st.pyplot(fig)
     with col2:
         st.header('Audio transformé')
         fig2, ax2 = plt.subplots()
-        ax2.plot(y_norm)
+        ax2.plot(frequencies,amp2)
         st.pyplot(fig2)
